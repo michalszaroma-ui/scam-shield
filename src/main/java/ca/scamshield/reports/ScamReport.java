@@ -1,13 +1,11 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * ScamReport.java
+ * Rev 1.0
+ * 24/10/2026
+ * @author Inès Khabkhabi - x25116169@student.ncirl.ie
  */
 package ca.scamshield.reports;
 
-/**
- *
- * @author lolo3
- */
 public class ScamReport {
-    
+
 }

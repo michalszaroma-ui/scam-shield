@@ -1,0 +1,133 @@
+<mxfile host="Electron">
+  <diagram id="0vk9MJadN6a5Re-JqX5R" name="Reports (Ines)">
+    <mxGraphModel dx="1580" dy="1147" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-1" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;swimlaneFillColor=#ffffff;" value="ReportList" vertex="1">
+          <mxGeometry height="218" width="380" x="40" y="1100" as="geometry" />
+        </mxCell>
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-2" parent="7GWWD7rAuGqTCUKUse6D-1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- reports : ArrayList&amp;lt;ScamReport&amp;gt;" vertex="1">
+          <mxGeometry height="26" width="380" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-3" parent="7GWWD7rAuGqTCUKUse6D-1" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="380" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-4" parent="7GWWD7rAuGqTCUKUse6D-1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ ReportList()&lt;br&gt;+ addReport(r : ScamReport) : void&lt;br&gt;+ removeReport(reportId : String) : boolean&lt;br&gt;+ searchByType(type : String) : ArrayList&amp;lt;ScamReport&amp;gt;&lt;br&gt;+ searchByKeyword(keyword : String) : ArrayList&amp;lt;ScamReport&amp;gt;&lt;br&gt;+ getAllReports() : ArrayList&amp;lt;ScamReport&amp;gt;&lt;br&gt;+ saveToFile() : void&lt;br&gt;+ loadFromFile() : void" vertex="1">
+          <mxGeometry height="154" width="380" y="64" as="geometry" />
+        </mxCell>
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-33" edge="1" parent="1" source="7GWWD7rAuGqTCUKUse6D-5" style="dashed=1;endArrow=block;endFill=0;endSize=16;fillColor=#d80073;strokeColor=#A50040;strokeColor=#000000;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="690" y="970" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-5" parent="1" style="swimlane;fontStyle=3;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;swimlaneFillColor=#ffffff;" value="ScamReport (abstract)" vertex="1">
+          <mxGeometry height="330" width="400" x="490" y="1100" as="geometry" />
+        </mxCell>
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-6" parent="7GWWD7rAuGqTCUKUse6D-5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="# reportId : String&lt;br&gt;# reporterName : String&lt;br&gt;# dateReported : String&lt;br&gt;# description : String&lt;br&gt;# contactMethod : String" vertex="1">
+          <mxGeometry height="90" width="400" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-7" parent="7GWWD7rAuGqTCUKUse6D-5" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="400" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-8" parent="7GWWD7rAuGqTCUKUse6D-5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ ScamReport(reportId : String, reporterName : String, dateReported : String, description : String, contactMethod : String)&lt;br&gt;+ getReportId() : String&lt;br&gt;+ getReporterName() : String&lt;br&gt;+ getDateReported() : String&lt;br&gt;+ getDescription() : String&lt;br&gt;+ getContactMethod() : String&lt;br&gt;&lt;i&gt;+ getRiskLevel() : String&lt;/i&gt;&lt;br&gt;&lt;i&gt;+ getType() : String&lt;/i&gt;&lt;br&gt;+ toString() : String&lt;br&gt;+ toFileString() : String" vertex="1">
+          <mxGeometry height="202" width="400" y="128" as="geometry" />
+        </mxCell>
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-9" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;swimlaneFillColor=#ffffff;" value="PhishingReport" vertex="1">
+          <mxGeometry height="218" width="400" x="40" y="1560" as="geometry" />
+        </mxCell>
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-10" parent="7GWWD7rAuGqTCUKUse6D-9" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- senderEmail : String&lt;br&gt;- suspiciousLink : String" vertex="1">
+          <mxGeometry height="42" width="400" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-11" parent="7GWWD7rAuGqTCUKUse6D-9" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="400" y="72" as="geometry" />
+        </mxCell>
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-12" parent="7GWWD7rAuGqTCUKUse6D-9" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ PhishingReport(reportId, reporterName, dateReported, description, contactMethod, senderEmail, suspiciousLink)&lt;br&gt;+ getSenderEmail() : String&lt;br&gt;+ getSuspiciousLink() : String&lt;br&gt;+ getRiskLevel() : String&lt;br&gt;+ getType() : String&lt;br&gt;+ toString() : String&lt;br&gt;+ toFileString() : String" vertex="1">
+          <mxGeometry height="138" width="400" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-13" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;swimlaneFillColor=#ffffff;" value="PhoneScamReport" vertex="1">
+          <mxGeometry height="218" width="400" x="490" y="1560" as="geometry" />
+        </mxCell>
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-14" parent="7GWWD7rAuGqTCUKUse6D-13" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- phoneNumber : String&lt;br&gt;- callerClaimedToBe : String" vertex="1">
+          <mxGeometry height="42" width="400" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-15" parent="7GWWD7rAuGqTCUKUse6D-13" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="400" y="72" as="geometry" />
+        </mxCell>
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-16" parent="7GWWD7rAuGqTCUKUse6D-13" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ PhoneScamReport(reportId, reporterName, dateReported, description, contactMethod, phoneNumber, callerClaimedToBe)&lt;br&gt;+ getPhoneNumber() : String&lt;br&gt;+ getCallerClaimedToBe() : String&lt;br&gt;+ getRiskLevel() : String&lt;br&gt;+ getType() : String&lt;br&gt;+ toString() : String&lt;br&gt;+ toFileString() : String" vertex="1">
+          <mxGeometry height="138" width="400" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-17" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;swimlaneFillColor=#ffffff;" value="FakeWebsiteReport" vertex="1">
+          <mxGeometry height="218" width="400" x="940" y="1560" as="geometry" />
+        </mxCell>
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-18" parent="7GWWD7rAuGqTCUKUse6D-17" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- websiteUrl : String&lt;br&gt;- moneyPaid : boolean" vertex="1">
+          <mxGeometry height="42" width="400" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-19" parent="7GWWD7rAuGqTCUKUse6D-17" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="400" y="72" as="geometry" />
+        </mxCell>
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-20" parent="7GWWD7rAuGqTCUKUse6D-17" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ FakeWebsiteReport(reportId, reporterName, dateReported, description, contactMethod, websiteUrl, moneyPaid)&lt;br&gt;+ getWebsiteUrl() : String&lt;br&gt;+ isMoneyPaid() : boolean&lt;br&gt;+ getRiskLevel() : String&lt;br&gt;+ getType() : String&lt;br&gt;+ toString() : String&lt;br&gt;+ toFileString() : String" vertex="1">
+          <mxGeometry height="138" width="400" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-21" edge="1" parent="1" source="7GWWD7rAuGqTCUKUse6D-9" style="endArrow=block;endFill=0;endSize=16;edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5000;exitY=0.0000;exitDx=0;exitDy=0;entryX=0.2500;entryY=1.0000;entryDx=0;entryDy=0;" target="7GWWD7rAuGqTCUKUse6D-5" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="240" y="1500" />
+              <mxPoint x="590" y="1500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-22" edge="1" parent="1" source="7GWWD7rAuGqTCUKUse6D-13" style="endArrow=block;endFill=0;endSize=16;edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5000;exitY=0.0000;exitDx=0;exitDy=0;entryX=0.5000;entryY=1.0000;entryDx=0;entryDy=0;" target="7GWWD7rAuGqTCUKUse6D-5" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="690" y="1500" />
+              <mxPoint x="690" y="1500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-23" edge="1" parent="1" source="7GWWD7rAuGqTCUKUse6D-17" style="endArrow=block;endFill=0;endSize=16;edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5000;exitY=0.0000;exitDx=0;exitDy=0;entryX=0.7500;entryY=1.0000;entryDx=0;entryDy=0;" target="7GWWD7rAuGqTCUKUse6D-5" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1140" y="1500" />
+              <mxPoint x="790" y="1500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-24" edge="1" parent="1" source="7GWWD7rAuGqTCUKUse6D-1" style="startArrow=diamondThin;startFill=0;startSize=20;endArrow=none;edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1.0000;exitY=0.2064;exitDx=0;exitDy=0;entryX=0.0000;entryY=0.1364;entryDx=0;entryDy=0;" target="7GWWD7rAuGqTCUKUse6D-5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-34" edge="1" parent="1" source="7GWWD7rAuGqTCUKUse6D-25" style="dashed=1;dashPattern=1 4;endArrow=open;endFill=0;strokeColor=#000000;fontStyle=1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="230" y="1090" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-35" connectable="0" parent="7GWWD7rAuGqTCUKUse6D-34" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="create/uses&amp;nbsp;" vertex="1">
+          <mxGeometry relative="1" x="0.0667" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-25" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#f5f5f5;swimlaneFillColor=#ffffff;strokeColor=#666666;gradientColor=#b3b3b3;" value="ScamShield" vertex="1">
+          <mxGeometry height="100" width="380" x="40" y="770" as="geometry" />
+        </mxCell>
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-26" parent="7GWWD7rAuGqTCUKUse6D-25" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="reportList : ReportList" vertex="1">
+          <mxGeometry height="26" width="380" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-27" parent="7GWWD7rAuGqTCUKUse6D-25" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="380" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-28" parent="7GWWD7rAuGqTCUKUse6D-25" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ main(args : String[]) : void" vertex="1">
+          <mxGeometry height="36" width="380" y="64" as="geometry" />
+        </mxCell>
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-29" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#f5f5f5;swimlaneFillColor=#ffffff;strokeColor=#666666;gradientColor=#b3b3b3;" value="&amp;lt;&amp;lt;interface&amp;gt;&amp;gt; Saveable" vertex="1">
+          <mxGeometry height="74" width="380" x="490" y="870" as="geometry" />
+        </mxCell>
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-31" parent="7GWWD7rAuGqTCUKUse6D-29" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="380" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7GWWD7rAuGqTCUKUse6D-32" parent="7GWWD7rAuGqTCUKUse6D-29" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ toFileString() : String" vertex="1">
+          <mxGeometry height="36" width="380" y="38" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

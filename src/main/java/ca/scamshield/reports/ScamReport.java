@@ -6,8 +6,8 @@ package ca.scamshield.reports;
 
 /**
  *
- * @author micha
+ * @author lolo3
  */
-public class Placeholder {
+public class ScamReport {
     
 }

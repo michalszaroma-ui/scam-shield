@@ -1,20 +1,22 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ *  MainMenuFrame.java
+ *
+ *  Rev 1
+ *
+ *  06/11/2026
+ *
+ *  @author Michal Szaroma
  */
 package ca.scamshield;
 
-/**
- *
- * @author micha
- */
+import ca.scamshield.quiz.QuizMenuFrame;
+
+
 public class MainMenuFrame extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MainMenuFrame.class.getName());
 
-    /**
-     * Creates new form MainMenuFrame
-     */
+    
     public MainMenuFrame() {
         initComponents();
         getContentPane().setBackground(new java.awt.Color(245, 247, 250));
@@ -69,6 +71,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
 
         btnExit.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnExit.setText("Exit");
+        btnExit.setFocusPainted(false);
         btnExit.setPreferredSize(new java.awt.Dimension(120, 35));
         btnExit.addActionListener(this::btnExitActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -79,7 +82,9 @@ public class MainMenuFrame extends javax.swing.JFrame {
 
         btnQuiz.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnQuiz.setText("<html><center><b>Awareness Quiz</b><br>Test yourself on spotting scams</center></html>");
+        btnQuiz.setFocusPainted(false);
         btnQuiz.setPreferredSize(new java.awt.Dimension(360, 70));
+        btnQuiz.addActionListener(this::btnQuizActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -88,6 +93,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
 
         btnReports.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnReports.setText("<html><center><b>Scam Reports</b><br>Report a scam and warn others</center></html>");
+        btnReports.setFocusPainted(false);
         btnReports.setPreferredSize(new java.awt.Dimension(360, 70));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -97,6 +103,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
 
         btnSupport.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnSupport.setText("<html><center><b>Victim Support</b><br>Get help after being scammed</center></html>");
+        btnSupport.setFocusPainted(false);
         btnSupport.setPreferredSize(new java.awt.Dimension(360, 70));
         btnSupport.addActionListener(this::btnSupportActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -106,8 +113,10 @@ public class MainMenuFrame extends javax.swing.JFrame {
         pnlButtons.add(btnSupport, gridBagConstraints);
 
         pnlFooter.setBackground(new java.awt.Color(30, 58, 95));
+        pnlFooter.setPreferredSize(new java.awt.Dimension(800, 40));
         pnlFooter.setLayout(new java.awt.BorderLayout());
 
+        lblFooter.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         lblFooter.setForeground(new java.awt.Color(200, 215, 235));
         lblFooter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblFooter.setText("SDG 16 - Peace, Justice and Strong Institutions");
@@ -141,6 +150,11 @@ public class MainMenuFrame extends javax.swing.JFrame {
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         System.exit(0);
     }//GEN-LAST:event_btnExitActionPerformed
+
+    private void btnQuizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuizActionPerformed
+        new QuizMenuFrame().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnQuizActionPerformed
 
     /**
      * @param args the command line arguments

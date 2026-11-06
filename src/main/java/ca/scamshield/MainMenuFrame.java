@@ -10,13 +10,13 @@
 package ca.scamshield;
 
 import ca.scamshield.quiz.QuizMenuFrame;
-
+import ca.scamshield.reports.ReportsMenuFrame;
+import ca.scamshield.support.SupportMenuFrame;
 
 public class MainMenuFrame extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MainMenuFrame.class.getName());
 
-    
     public MainMenuFrame() {
         initComponents();
         getContentPane().setBackground(new java.awt.Color(245, 247, 250));
@@ -95,6 +95,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
         btnReports.setText("<html><center><b>Scam Reports</b><br>Report a scam and warn others</center></html>");
         btnReports.setFocusPainted(false);
         btnReports.setPreferredSize(new java.awt.Dimension(360, 70));
+        btnReports.addActionListener(this::btnReportsActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -144,7 +145,8 @@ public class MainMenuFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSupportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSupportActionPerformed
-        // TODO add your handling code here:
+        new SupportMenuFrame().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnSupportActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
@@ -155,6 +157,11 @@ public class MainMenuFrame extends javax.swing.JFrame {
         new QuizMenuFrame().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnQuizActionPerformed
+
+    private void btnReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportsActionPerformed
+        new ReportsMenuFrame().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnReportsActionPerformed
 
     /**
      * @param args the command line arguments

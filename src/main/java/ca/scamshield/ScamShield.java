@@ -14,6 +14,6 @@ package ca.scamshield;
 public class ScamShield {
 
     public static void main(String[] args) {
-        System.out.println("Scam Shield starting...");
+        new MainMenuFrame().setVisible(true);
     }
 }

@@ -9,7 +9,7 @@ package ca.scamshield;
  * @author micha
  */
 public class MainMenuFrame extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MainMenuFrame.class.getName());
 
     /**
@@ -17,6 +17,8 @@ public class MainMenuFrame extends javax.swing.JFrame {
      */
     public MainMenuFrame() {
         initComponents();
+        getContentPane().setBackground(new java.awt.Color(245, 247, 250));
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -68,6 +70,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
         btnExit.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnExit.setText("Exit");
         btnExit.setPreferredSize(new java.awt.Dimension(120, 35));
+        btnExit.addActionListener(this::btnExitActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
@@ -134,6 +137,10 @@ public class MainMenuFrame extends javax.swing.JFrame {
     private void btnSupportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSupportActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSupportActionPerformed
+
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnExitActionPerformed
 
     /**
      * @param args the command line arguments

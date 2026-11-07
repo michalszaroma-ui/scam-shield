@@ -1,8 +1,8 @@
 /*
  * ViewReportsGUI.java
- * Rev 1.0
+ * Rev 2.0
  * 07/11/2026
- * @author Inès Khabkhabi
+ * @author Inès Khabkhabi 
  *
  * Form 2 of the Scam Reports section: the user searches the reports by
  * keyword or type, sees each report's risk level, and can delete a report.
@@ -37,23 +37,27 @@ public class ViewReportsGUI extends JFrame {
     private JButton btnBack;
 
     public ViewReportsGUI() {
-        ReportsStyle.setUpFrame(this, "View / Search Reports");
+        ReportsStyle.setUpFrame(this, "View & Search Reports");
         initComponents();
     }
 
     private void initComponents() {
-        add(ReportsStyle.createHeader("View / Search Reports"), BorderLayout.NORTH);
+        add(ReportsStyle.createHeader("View & Search Reports", "See all reports, search or delete a report"),
+                BorderLayout.NORTH);
 
         // ---------- search bar ----------
         txtSearch = new JTextField(18);
+        txtSearch.setFont(ReportsStyle.LABEL_FONT);
+        txtSearch.setBorder(ReportsStyle.fieldBorder());
         cmbFilterType = new JComboBox<>(new String[]{"All types", "Phishing email", "Phone scam", "Fake website"});
-        btnSearch = ReportsStyle.createButton("Search");
+        btnSearch = ReportsStyle.createPrimaryButton("Search");
 
-        JPanel searchBar = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 10));
-        searchBar.setBackground(ReportsStyle.BACKGROUND);
-        searchBar.add(ReportsStyle.createLabel("Keyword"));
+        JPanel searchBar = ReportsStyle.transparentPanel();
+        searchBar.setLayout(new FlowLayout(FlowLayout.LEFT, 8, 4));
+        searchBar.add(ReportsStyle.createHeading("Search"));
+        searchBar.add(ReportsStyle.createLabel("  Keyword"));
         searchBar.add(txtSearch);
-        searchBar.add(ReportsStyle.createLabel("Type"));
+        searchBar.add(ReportsStyle.createLabel("  Type"));
         searchBar.add(cmbFilterType);
         searchBar.add(btnSearch);
 
@@ -71,29 +75,32 @@ public class ViewReportsGUI extends JFrame {
         tableModel.addRow(new Object[]{"R003 (example)", "Fake website", "04/11/2026", "Sample user", "High"});
 
         tblReports = new JTable(tableModel);
-        tblReports.setFont(ReportsStyle.LABEL_FONT);
-        tblReports.setRowHeight(26);
-        tblReports.getTableHeader().setFont(ReportsStyle.BUTTON_FONT);
         tblReports.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        ReportsStyle.styleTable(tblReports);
 
         JScrollPane tableScroll = new JScrollPane(tblReports);
-        tableScroll.setBorder(BorderFactory.createLineBorder(ReportsStyle.GREEN));
+        tableScroll.setBorder(BorderFactory.createLineBorder(ReportsStyle.LINE));
+        tableScroll.getViewport().setBackground(java.awt.Color.WHITE);
 
-        JPanel centre = new JPanel(new BorderLayout(0, 6));
-        centre.setBackground(ReportsStyle.BACKGROUND);
-        centre.setBorder(BorderFactory.createEmptyBorder(6, 20, 0, 20));
+        JPanel centre = ReportsStyle.transparentPanel();
+        centre.setLayout(new BorderLayout(0, 6));
         centre.add(searchBar, BorderLayout.NORTH);
         centre.add(tableScroll, BorderLayout.CENTER);
         add(centre, BorderLayout.CENTER);
 
-        // ---------- buttons ----------
+        // ---------- buttons and footer ----------
         btnDelete = ReportsStyle.createButton("Delete Selected");
         btnBack = ReportsStyle.createButton("Back");
-        JPanel buttons = new JPanel(new FlowLayout(FlowLayout.CENTER, 14, 12));
-        buttons.setBackground(ReportsStyle.BACKGROUND);
-        buttons.add(btnDelete);
+        JPanel buttons = ReportsStyle.transparentPanel();
+        buttons.setLayout(new FlowLayout(FlowLayout.RIGHT, 10, 8));
         buttons.add(btnBack);
-        add(buttons, BorderLayout.SOUTH);
+        buttons.add(btnDelete);
+
+        JPanel bottom = ReportsStyle.transparentPanel();
+        bottom.setLayout(new BorderLayout());
+        bottom.add(buttons, BorderLayout.NORTH);
+        bottom.add(ReportsStyle.createFooter("View & Search Reports"), BorderLayout.SOUTH);
+        add(bottom, BorderLayout.SOUTH);
 
         // ---------- events ----------
         btnSearch.addActionListener(e -> searchReports());

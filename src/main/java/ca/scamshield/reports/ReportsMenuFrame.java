@@ -82,6 +82,7 @@ public class ReportsMenuFrame extends javax.swing.JFrame {
         btnViewReports.setText("<html><center><b>View Reports</b><br>See all reports and risk levels</center></html>");
         btnViewReports.setFocusPainted(false);
         btnViewReports.setPreferredSize(new java.awt.Dimension(360, 70));
+        btnViewReports.addActionListener(this::btnViewReportsActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -92,6 +93,7 @@ public class ReportsMenuFrame extends javax.swing.JFrame {
         btnSubmitReport.setText("<html><center><b>Submit Report</b><br>Report a new scam</center></html>");
         btnSubmitReport.setFocusPainted(false);
         btnSubmitReport.setPreferredSize(new java.awt.Dimension(360, 70));
+        btnSubmitReport.addActionListener(this::btnSubmitReportActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -102,6 +104,7 @@ public class ReportsMenuFrame extends javax.swing.JFrame {
         btnSearchReports.setText("<html><center><b>Search Reports</b><br>Search or delete a report</center></html>");
         btnSearchReports.setFocusPainted(false);
         btnSearchReports.setPreferredSize(new java.awt.Dimension(360, 70));
+        btnSearchReports.addActionListener(this::btnSearchReportsActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
@@ -143,6 +146,21 @@ public class ReportsMenuFrame extends javax.swing.JFrame {
         new MainMenuFrame().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void btnSubmitReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitReportActionPerformed
+         new SubmitReportGUI().setVisible(true);
+   this.dispose();
+    }//GEN-LAST:event_btnSubmitReportActionPerformed
+
+    private void btnViewReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewReportsActionPerformed
+        new ViewReportsGUI().setVisible(true);
+this.dispose();
+    }//GEN-LAST:event_btnViewReportsActionPerformed
+
+    private void btnSearchReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchReportsActionPerformed
+        new ViewReportsGUI().setVisible(true);
+this.dispose();
+    }//GEN-LAST:event_btnSearchReportsActionPerformed
 
     /**
      * @param args the command line arguments

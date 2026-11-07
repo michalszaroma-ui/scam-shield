@@ -60,6 +60,14 @@ public class ManageQuestionsFrame extends javax.swing.JFrame {
         btnAdd = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
         pnlFind = new javax.swing.JPanel();
+        lblSearchTopic = new javax.swing.JLabel();
+        cmbSearchTopic = new javax.swing.JComboBox<>();
+        btnSearch = new javax.swing.JButton();
+        scrQuestions = new javax.swing.JScrollPane();
+        txaQuestions = new javax.swing.JTextArea();
+        lblQuestionNo = new javax.swing.JLabel();
+        txtQuestionNo = new javax.swing.JTextField();
+        btnDelete = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Scam Shield - Manage Questions");
@@ -100,180 +108,298 @@ public class ManageQuestionsFrame extends javax.swing.JFrame {
         btnBack.setPreferredSize(new java.awt.Dimension(120, 35));
         btnBack.addActionListener(this::btnBackActionPerformed);
 
-        pnlAdd.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Add a question", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14), new java.awt.Color(30, 58, 95))); // NOI18N
+        pnlAdd.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Add a Question", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14), new java.awt.Color(30, 58, 95))); // NOI18N
         pnlAdd.setOpaque(false);
         pnlAdd.setPreferredSize(new java.awt.Dimension(430, 360));
+        pnlAdd.setLayout(new java.awt.GridBagLayout());
 
         lblQuestion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblQuestion.setText("Question:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 10, 6, 10);
+        pnlAdd.add(lblQuestion, gridBagConstraints);
 
         txtQuestion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtQuestion.setPreferredSize(new java.awt.Dimension(260, 28));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 434;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(6, 0, 6, 10);
+        pnlAdd.add(txtQuestion, gridBagConstraints);
 
         lblTopic.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblTopic.setText("Topic:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 10, 6, 10);
+        pnlAdd.add(lblTopic, gridBagConstraints);
 
         cmbTopic.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         cmbTopic.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Phishing", "Phone Scams", "Passwords", "Fake Websites" }));
         cmbTopic.setPreferredSize(new java.awt.Dimension(160, 28));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.ipadx = 31;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 0, 6, 10);
+        pnlAdd.add(cmbTopic, gridBagConstraints);
 
         lblType.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblType.setText("Type:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 10, 6, 10);
+        pnlAdd.add(lblType, gridBagConstraints);
 
         cmbType.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         cmbType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Multiple Choice", "True/False" }));
         cmbType.setPreferredSize(new java.awt.Dimension(160, 28));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.ipadx = 23;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 0, 6, 10);
+        pnlAdd.add(cmbType, gridBagConstraints);
 
         lblOptionA.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblOptionA.setText("Option A:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 10, 6, 10);
+        pnlAdd.add(lblOptionA, gridBagConstraints);
 
         txtOptionA.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtOptionA.setPreferredSize(new java.awt.Dimension(260, 28));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 434;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(6, 0, 6, 10);
+        pnlAdd.add(txtOptionA, gridBagConstraints);
 
         lblOptionB.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblOptionB.setText("Option B:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 10, 6, 10);
+        pnlAdd.add(lblOptionB, gridBagConstraints);
 
         txtOptionB.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtOptionB.setPreferredSize(new java.awt.Dimension(260, 28));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 434;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(6, 0, 6, 10);
+        pnlAdd.add(txtOptionB, gridBagConstraints);
 
         lblOptionC.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblOptionC.setText("Option C:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 10, 6, 10);
+        pnlAdd.add(lblOptionC, gridBagConstraints);
 
         txtOptionC.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtOptionC.setPreferredSize(new java.awt.Dimension(260, 28));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 434;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(6, 0, 6, 10);
+        pnlAdd.add(txtOptionC, gridBagConstraints);
 
         lblOptionD.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblOptionD.setText("Option D:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 10, 6, 10);
+        pnlAdd.add(lblOptionD, gridBagConstraints);
 
         txtOptionD.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtOptionD.setPreferredSize(new java.awt.Dimension(260, 28));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 192;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(6, 0, 6, 10);
+        pnlAdd.add(txtOptionD, gridBagConstraints);
 
         lblCorrect.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblCorrect.setText("Correct answer:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 7;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 10, 6, 10);
+        pnlAdd.add(lblCorrect, gridBagConstraints);
 
         cmbCorrect.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         cmbCorrect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "True", "False" }));
         cmbCorrect.setPreferredSize(new java.awt.Dimension(100, 28));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 7;
+        gridBagConstraints.ipadx = 24;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 0, 6, 10);
+        pnlAdd.add(cmbCorrect, gridBagConstraints);
 
         lblExplanation.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblExplanation.setText("Explanation:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 10, 6, 10);
+        pnlAdd.add(lblExplanation, gridBagConstraints);
 
         txtExplanation.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtExplanation.setPreferredSize(new java.awt.Dimension(260, 28));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 305;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(6, 0, 6, 10);
+        pnlAdd.add(txtExplanation, gridBagConstraints);
 
         btnAdd.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnAdd.setText("Add Question");
         btnAdd.setFocusPainted(false);
         btnAdd.setPreferredSize(new java.awt.Dimension(140, 35));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 9;
+        gridBagConstraints.ipadx = 21;
+        gridBagConstraints.ipady = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(12, 10, 6, 10);
+        pnlAdd.add(btnAdd, gridBagConstraints);
 
         btnClear.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnClear.setText("Clear");
         btnClear.setFocusPainted(false);
         btnClear.setPreferredSize(new java.awt.Dimension(100, 35));
-
-        javax.swing.GroupLayout pnlAddLayout = new javax.swing.GroupLayout(pnlAdd);
-        pnlAdd.setLayout(pnlAddLayout);
-        pnlAddLayout.setHorizontalGroup(
-            pnlAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlAddLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnlAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlAddLayout.createSequentialGroup()
-                        .addGroup(pnlAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblQuestion)
-                            .addComponent(lblTopic)
-                            .addComponent(lblType)
-                            .addComponent(lblOptionA)
-                            .addComponent(lblOptionB)
-                            .addComponent(lblOptionC)
-                            .addComponent(lblOptionD))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(pnlAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtQuestion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtOptionA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtOptionB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtOptionC, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(pnlAddLayout.createSequentialGroup()
-                                .addGroup(pnlAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cmbTopic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cmbType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtOptionD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(242, 242, 242))))
-                    .addGroup(pnlAddLayout.createSequentialGroup()
-                        .addComponent(lblExplanation)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtExplanation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(116, 116, 116))
-                    .addGroup(pnlAddLayout.createSequentialGroup()
-                        .addComponent(lblCorrect)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cmbCorrect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(pnlAddLayout.createSequentialGroup()
-                .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        pnlAddLayout.setVerticalGroup(
-            pnlAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlAddLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnlAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblQuestion)
-                    .addComponent(txtQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblTopic)
-                    .addComponent(cmbTopic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblType)
-                    .addComponent(cmbType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblOptionA)
-                    .addComponent(txtOptionA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblOptionB)
-                    .addComponent(txtOptionB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblOptionC)
-                    .addComponent(txtOptionC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblOptionD)
-                    .addComponent(txtOptionD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCorrect)
-                    .addComponent(cmbCorrect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
-                .addGroup(pnlAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblExplanation)
-                    .addComponent(txtExplanation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addGroup(pnlAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 9;
+        gridBagConstraints.ipadx = 24;
+        gridBagConstraints.ipady = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(12, 10, 6, 10);
+        pnlAdd.add(btnClear, gridBagConstraints);
 
         pnlFind.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Find / Delete", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14), new java.awt.Color(30, 58, 95))); // NOI18N
         pnlFind.setPreferredSize(new java.awt.Dimension(330, 360));
+        pnlFind.setLayout(new java.awt.GridBagLayout());
 
-        javax.swing.GroupLayout pnlFindLayout = new javax.swing.GroupLayout(pnlFind);
-        pnlFind.setLayout(pnlFindLayout);
-        pnlFindLayout.setHorizontalGroup(
-            pnlFindLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        pnlFindLayout.setVerticalGroup(
-            pnlFindLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
+        lblSearchTopic.setText("Topic:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 10, 6, 0);
+        pnlFind.add(lblSearchTopic, gridBagConstraints);
+
+        cmbSearchTopic.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "All", "Phishing", "Phone Scams", "Passwords", "Fake Websites", " " }));
+        cmbSearchTopic.setPreferredSize(new java.awt.Dimension(140, 28));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 10, 6, 0);
+        pnlFind.add(cmbSearchTopic, gridBagConstraints);
+
+        btnSearch.setText("Search");
+        btnSearch.setPreferredSize(new java.awt.Dimension(90, 30));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 10, 6, 0);
+        pnlFind.add(btnSearch, gridBagConstraints);
+
+        txaQuestions.setEditable(false);
+        txaQuestions.setColumns(20);
+        txaQuestions.setLineWrap(true);
+        txaQuestions.setRows(5);
+        txaQuestions.setWrapStyleWord(true);
+        scrQuestions.setViewportView(txaQuestions);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(6, 10, 6, 10);
+        pnlFind.add(scrQuestions, gridBagConstraints);
+
+        lblQuestionNo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblQuestionNo.setText("Question no:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 10, 6, 0);
+        pnlFind.add(lblQuestionNo, gridBagConstraints);
+
+        txtQuestionNo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtQuestionNo.setPreferredSize(new java.awt.Dimension(60, 28));
+        txtQuestionNo.addActionListener(this::txtQuestionNoActionPerformed);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 10, 6, 0);
+        pnlFind.add(txtQuestionNo, gridBagConstraints);
+
+        btnDelete.setText("Delete");
+        btnDelete.setFocusPainted(false);
+        btnDelete.setPreferredSize(new java.awt.Dimension(90, 30));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 10, 6, 0);
+        pnlFind.add(btnDelete, gridBagConstraints);
 
         javax.swing.GroupLayout pnlFormLayout = new javax.swing.GroupLayout(pnlForm);
         pnlForm.setLayout(pnlFormLayout);
@@ -286,7 +412,7 @@ public class ManageQuestionsFrame extends javax.swing.JFrame {
                         .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlFormLayout.createSequentialGroup()
                         .addComponent(pnlAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(pnlFind, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(11, 11, 11))
         );
@@ -294,10 +420,8 @@ public class ManageQuestionsFrame extends javax.swing.JFrame {
             pnlFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlFormLayout.createSequentialGroup()
                 .addGroup(pnlFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnlFind, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE)
-                    .addGroup(pnlFormLayout.createSequentialGroup()
-                        .addComponent(pnlAdd, javax.swing.GroupLayout.DEFAULT_SIZE, 406, Short.MAX_VALUE)
-                        .addGap(37, 37, 37)))
+                    .addComponent(pnlFind, javax.swing.GroupLayout.DEFAULT_SIZE, 458, Short.MAX_VALUE)
+                    .addComponent(pnlAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -329,6 +453,10 @@ public class ManageQuestionsFrame extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
 
+    private void txtQuestionNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtQuestionNoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtQuestionNoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -358,7 +486,10 @@ public class ManageQuestionsFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnClear;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnSearch;
     private javax.swing.JComboBox<String> cmbCorrect;
+    private javax.swing.JComboBox<String> cmbSearchTopic;
     private javax.swing.JComboBox<String> cmbTopic;
     private javax.swing.JComboBox<String> cmbType;
     private javax.swing.JLabel lblCorrect;
@@ -369,6 +500,8 @@ public class ManageQuestionsFrame extends javax.swing.JFrame {
     private javax.swing.JLabel lblOptionC;
     private javax.swing.JLabel lblOptionD;
     private javax.swing.JLabel lblQuestion;
+    private javax.swing.JLabel lblQuestionNo;
+    private javax.swing.JLabel lblSearchTopic;
     private javax.swing.JLabel lblSubtitle;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JLabel lblTopic;
@@ -378,11 +511,14 @@ public class ManageQuestionsFrame extends javax.swing.JFrame {
     private javax.swing.JPanel pnlFooter;
     private javax.swing.JPanel pnlForm;
     private javax.swing.JPanel pnlHeader;
+    private javax.swing.JScrollPane scrQuestions;
+    private javax.swing.JTextArea txaQuestions;
     private javax.swing.JTextField txtExplanation;
     private javax.swing.JTextField txtOptionA;
     private javax.swing.JTextField txtOptionB;
     private javax.swing.JTextField txtOptionC;
     private javax.swing.JTextField txtOptionD;
     private javax.swing.JTextField txtQuestion;
+    private javax.swing.JTextField txtQuestionNo;
     // End of variables declaration//GEN-END:variables
 }

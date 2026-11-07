@@ -81,6 +81,7 @@ public class QuizMenuFrame extends javax.swing.JFrame {
         btnManageQuestions.setText("<html><center><b>Manage Questions</b><br>Add, search and delete questions</center></html>");
         btnManageQuestions.setFocusPainted(false);
         btnManageQuestions.setPreferredSize(new java.awt.Dimension(360, 70));
+        btnManageQuestions.addActionListener(this::btnManageQuestionsActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -142,6 +143,11 @@ public class QuizMenuFrame extends javax.swing.JFrame {
         new MainMenuFrame().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void btnManageQuestionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageQuestionsActionPerformed
+        new ManageQuestionsFrame().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnManageQuestionsActionPerformed
 
     /**
      * @param args the command line arguments

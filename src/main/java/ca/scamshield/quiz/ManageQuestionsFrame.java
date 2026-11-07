@@ -146,6 +146,7 @@ public class ManageQuestionsFrame extends javax.swing.JFrame {
         cmbTopic.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         cmbTopic.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Phishing", "Phone Scams", "Passwords", "Fake Websites" }));
         cmbTopic.setPreferredSize(new java.awt.Dimension(160, 28));
+        cmbTopic.addActionListener(this::cmbTopicActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
@@ -456,6 +457,10 @@ public class ManageQuestionsFrame extends javax.swing.JFrame {
     private void txtQuestionNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtQuestionNoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtQuestionNoActionPerformed
+
+    private void cmbTopicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbTopicActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbTopicActionPerformed
 
     /**
      * @param args the command line arguments

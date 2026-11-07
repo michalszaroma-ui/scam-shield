@@ -92,6 +92,7 @@ public class QuizMenuFrame extends javax.swing.JFrame {
         btnTakeQuiz.setText("<html><center><b>Take Quiz</b><br>Answer questions and get your score</center></html>");
         btnTakeQuiz.setFocusPainted(false);
         btnTakeQuiz.setPreferredSize(new java.awt.Dimension(360, 70));
+        btnTakeQuiz.addActionListener(this::btnTakeQuizActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -148,6 +149,11 @@ public class QuizMenuFrame extends javax.swing.JFrame {
         new ManageQuestionsFrame().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnManageQuestionsActionPerformed
+
+    private void btnTakeQuizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTakeQuizActionPerformed
+        new TakeQuizFrame().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnTakeQuizActionPerformed
 
     /**
      * @param args the command line arguments

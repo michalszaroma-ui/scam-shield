@@ -14,6 +14,10 @@ package ca.scamshield;
 public class ScamShield {
 
     public static void main(String[] args) {
+        //stop Java's default Metal style showwing text in bold
+        javax.swing.UIManager.put("swing.boldMetal", Boolean.FALSE);
+        
+        //open the main menu
         new MainMenuFrame().setVisible(true);
     }
 }

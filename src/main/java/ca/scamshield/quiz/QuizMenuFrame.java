@@ -103,6 +103,7 @@ public class QuizMenuFrame extends javax.swing.JFrame {
         btnScoreHistory.setText("<html><center><b>Score History</b><br>See past attempts and best score</center></html>");
         btnScoreHistory.setFocusPainted(false);
         btnScoreHistory.setPreferredSize(new java.awt.Dimension(360, 70));
+        btnScoreHistory.addActionListener(this::btnScoreHistoryActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
@@ -154,6 +155,11 @@ public class QuizMenuFrame extends javax.swing.JFrame {
         new TakeQuizFrame().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnTakeQuizActionPerformed
+
+    private void btnScoreHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnScoreHistoryActionPerformed
+        new ScoreHistoryFrame().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnScoreHistoryActionPerformed
 
     /**
      * @param args the command line arguments

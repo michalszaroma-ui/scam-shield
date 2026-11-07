@@ -119,7 +119,7 @@ public class ManageQuestionsFrame extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 10, 6, 10);
+        gridBagConstraints.insets = new java.awt.Insets(3, 10, 3, 10);
         pnlAdd.add(lblQuestion, gridBagConstraints);
 
         txtQuestion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -131,7 +131,7 @@ public class ManageQuestionsFrame extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 434;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(6, 0, 6, 10);
+        gridBagConstraints.insets = new java.awt.Insets(3, 10, 3, 10);
         pnlAdd.add(txtQuestion, gridBagConstraints);
 
         lblTopic.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -140,7 +140,7 @@ public class ManageQuestionsFrame extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 10, 6, 10);
+        gridBagConstraints.insets = new java.awt.Insets(3, 10, 3, 10);
         pnlAdd.add(lblTopic, gridBagConstraints);
 
         cmbTopic.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -152,7 +152,7 @@ public class ManageQuestionsFrame extends javax.swing.JFrame {
         gridBagConstraints.gridy = 1;
         gridBagConstraints.ipadx = 31;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 0, 6, 10);
+        gridBagConstraints.insets = new java.awt.Insets(3, 10, 3, 10);
         pnlAdd.add(cmbTopic, gridBagConstraints);
 
         lblType.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -161,7 +161,7 @@ public class ManageQuestionsFrame extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 10, 6, 10);
+        gridBagConstraints.insets = new java.awt.Insets(3, 10, 3, 10);
         pnlAdd.add(lblType, gridBagConstraints);
 
         cmbType.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -172,7 +172,7 @@ public class ManageQuestionsFrame extends javax.swing.JFrame {
         gridBagConstraints.gridy = 2;
         gridBagConstraints.ipadx = 23;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 0, 6, 10);
+        gridBagConstraints.insets = new java.awt.Insets(3, 10, 3, 10);
         pnlAdd.add(cmbType, gridBagConstraints);
 
         lblOptionA.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -181,7 +181,7 @@ public class ManageQuestionsFrame extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 10, 6, 10);
+        gridBagConstraints.insets = new java.awt.Insets(3, 10, 3, 10);
         pnlAdd.add(lblOptionA, gridBagConstraints);
 
         txtOptionA.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -193,7 +193,7 @@ public class ManageQuestionsFrame extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 434;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(6, 0, 6, 10);
+        gridBagConstraints.insets = new java.awt.Insets(3, 10, 3, 10);
         pnlAdd.add(txtOptionA, gridBagConstraints);
 
         lblOptionB.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -202,7 +202,7 @@ public class ManageQuestionsFrame extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 10, 6, 10);
+        gridBagConstraints.insets = new java.awt.Insets(3, 10, 3, 10);
         pnlAdd.add(lblOptionB, gridBagConstraints);
 
         txtOptionB.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -214,7 +214,7 @@ public class ManageQuestionsFrame extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 434;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(6, 0, 6, 10);
+        gridBagConstraints.insets = new java.awt.Insets(3, 10, 3, 10);
         pnlAdd.add(txtOptionB, gridBagConstraints);
 
         lblOptionC.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -223,7 +223,7 @@ public class ManageQuestionsFrame extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 10, 6, 10);
+        gridBagConstraints.insets = new java.awt.Insets(3, 10, 3, 10);
         pnlAdd.add(lblOptionC, gridBagConstraints);
 
         txtOptionC.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -235,7 +235,7 @@ public class ManageQuestionsFrame extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 434;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(6, 0, 6, 10);
+        gridBagConstraints.insets = new java.awt.Insets(3, 10, 3, 10);
         pnlAdd.add(txtOptionC, gridBagConstraints);
 
         lblOptionD.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -244,7 +244,7 @@ public class ManageQuestionsFrame extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 10, 6, 10);
+        gridBagConstraints.insets = new java.awt.Insets(3, 10, 3, 10);
         pnlAdd.add(lblOptionD, gridBagConstraints);
 
         txtOptionD.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -256,7 +256,7 @@ public class ManageQuestionsFrame extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 192;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(6, 0, 6, 10);
+        gridBagConstraints.insets = new java.awt.Insets(3, 10, 3, 10);
         pnlAdd.add(txtOptionD, gridBagConstraints);
 
         lblCorrect.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -265,7 +265,7 @@ public class ManageQuestionsFrame extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 7;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 10, 6, 10);
+        gridBagConstraints.insets = new java.awt.Insets(3, 10, 3, 10);
         pnlAdd.add(lblCorrect, gridBagConstraints);
 
         cmbCorrect.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -276,7 +276,7 @@ public class ManageQuestionsFrame extends javax.swing.JFrame {
         gridBagConstraints.gridy = 7;
         gridBagConstraints.ipadx = 24;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 0, 6, 10);
+        gridBagConstraints.insets = new java.awt.Insets(3, 10, 3, 10);
         pnlAdd.add(cmbCorrect, gridBagConstraints);
 
         lblExplanation.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -285,7 +285,7 @@ public class ManageQuestionsFrame extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 10, 6, 10);
+        gridBagConstraints.insets = new java.awt.Insets(3, 10, 3, 10);
         pnlAdd.add(lblExplanation, gridBagConstraints);
 
         txtExplanation.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -297,7 +297,7 @@ public class ManageQuestionsFrame extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 305;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(6, 0, 6, 10);
+        gridBagConstraints.insets = new java.awt.Insets(3, 10, 3, 10);
         pnlAdd.add(txtExplanation, gridBagConstraints);
 
         btnAdd.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -310,7 +310,7 @@ public class ManageQuestionsFrame extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 21;
         gridBagConstraints.ipady = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(12, 10, 6, 10);
+        gridBagConstraints.insets = new java.awt.Insets(8, 10, 3, 10);
         pnlAdd.add(btnAdd, gridBagConstraints);
 
         btnClear.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -323,7 +323,7 @@ public class ManageQuestionsFrame extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 24;
         gridBagConstraints.ipady = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(12, 10, 6, 10);
+        gridBagConstraints.insets = new java.awt.Insets(8, 10, 3, 10);
         pnlAdd.add(btnClear, gridBagConstraints);
 
         pnlFind.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Find / Delete", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14), new java.awt.Color(30, 58, 95))); // NOI18N
@@ -421,7 +421,7 @@ public class ManageQuestionsFrame extends javax.swing.JFrame {
             pnlFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlFormLayout.createSequentialGroup()
                 .addGroup(pnlFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnlFind, javax.swing.GroupLayout.DEFAULT_SIZE, 458, Short.MAX_VALUE)
+                    .addComponent(pnlFind, javax.swing.GroupLayout.DEFAULT_SIZE, 411, Short.MAX_VALUE)
                     .addComponent(pnlAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)

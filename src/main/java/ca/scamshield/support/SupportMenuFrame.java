@@ -16,6 +16,8 @@ import ca.scamshield.MainMenuFrame;
 public class SupportMenuFrame extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(SupportMenuFrame.class.getName());
+    private javax.swing.JFrame parentWindow;
+    private ca.scamshield.support.caseList caseList=new caseList();
 
     public SupportMenuFrame() {
         initComponents();
@@ -51,58 +53,70 @@ public class SupportMenuFrame extends javax.swing.JFrame {
         pnlHeader.setPreferredSize(new java.awt.Dimension(800, 90));
         pnlHeader.setLayout(new java.awt.BorderLayout());
 
+        lblTitle.setBackground(new java.awt.Color(36, 119, 116));
         lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         lblTitle.setForeground(new java.awt.Color(255, 255, 255));
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitle.setText("Victim Support");
+        lblTitle.setText("Support & Recovery");
         lblTitle.setBorder(javax.swing.BorderFactory.createEmptyBorder(12, 0, 0, 0));
         pnlHeader.add(lblTitle, java.awt.BorderLayout.CENTER);
 
+        lblSubtitle.setBackground(new java.awt.Color(36, 119, 116));
         lblSubtitle.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblSubtitle.setForeground(new java.awt.Color(200, 215, 235));
         lblSubtitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblSubtitle.setText("Guidance and support after a scam");
+        lblSubtitle.setText("Record a scam incident and get a recovery guidance");
         lblSubtitle.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 12, 0));
         pnlHeader.add(lblSubtitle, java.awt.BorderLayout.SOUTH);
 
         pnlButtons.setOpaque(false);
         pnlButtons.setLayout(new java.awt.GridBagLayout());
 
+        btnBack.setBackground(new java.awt.Color(0, 153, 153));
         btnBack.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnBack.setText("Back");
+        btnBack.setText("Back to Main Menu");
         btnBack.setFocusPainted(false);
-        btnBack.setPreferredSize(new java.awt.Dimension(120, 35));
+        btnBack.setMaximumSize(new java.awt.Dimension(165, 26));
+        btnBack.setMinimumSize(new java.awt.Dimension(165, 26));
+        btnBack.setPreferredSize(new java.awt.Dimension(170, 40));
         btnBack.addActionListener(this::btnBackActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 15, 0);
         pnlButtons.add(btnBack, gridBagConstraints);
 
+        btnViewCases.setBackground(new java.awt.Color(204, 204, 204));
         btnViewCases.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnViewCases.setText("<html><center><b>View Cases</b><br>See all cases and recovery advice</center></html>");
+        btnViewCases.setText("<html><center><b>View Cases</b><br>Review your cases and recovery See all cases and recovery advice advice</center></html>");
         btnViewCases.setFocusPainted(false);
         btnViewCases.setPreferredSize(new java.awt.Dimension(360, 70));
+        btnViewCases.addActionListener(this::btnViewCasesActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 15, 0);
         pnlButtons.add(btnViewCases, gridBagConstraints);
 
+        btnOpenCase.setBackground(new java.awt.Color(204, 204, 204));
         btnOpenCase.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnOpenCase.setText("<html><center><b>Open a Case</b><br>Record what happened</center></html>");
+        btnOpenCase.setText("<html><center><b>Open a Case</b><br>Tell us what happened and find your next steps.</center></html>");
         btnOpenCase.setFocusPainted(false);
         btnOpenCase.setPreferredSize(new java.awt.Dimension(360, 70));
+        btnOpenCase.addActionListener(this::btnOpenCaseActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 15, 0);
         pnlButtons.add(btnOpenCase, gridBagConstraints);
 
+        btnFindCase.setBackground(new java.awt.Color(204, 204, 204));
         btnFindCase.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnFindCase.setText("<html><center><b>Find a Case</b><br>Search by ID, resolve or remove</center></html>");
+        btnFindCase.setText("<html><center><b>Find a Case</b><br>Search by case ID to update or close a case.</center></html>");
         btnFindCase.setFocusPainted(false);
         btnFindCase.setPreferredSize(new java.awt.Dimension(360, 70));
+        btnFindCase.addActionListener(this::btnFindCaseActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
@@ -123,16 +137,19 @@ public class SupportMenuFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlButtons, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(pnlHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 814, Short.MAX_VALUE)
             .addComponent(pnlFooter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(pnlButtons, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(pnlHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnlButtons, javax.swing.GroupLayout.DEFAULT_SIZE, 458, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(pnlButtons, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pnlFooter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -142,8 +159,33 @@ public class SupportMenuFrame extends javax.swing.JFrame {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         new MainMenuFrame().setVisible(true);
-        this.dispose();
+       
+        if(parentWindow != null){
+           parentWindow.setVisible(true);
+        }
+        dispose();
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void btnOpenCaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOpenCaseActionPerformed
+        OpenACaseFrame frame=new OpenACaseFrame(this,caseList);
+        frame.setLocationRelativeTo(this);
+        frame.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnOpenCaseActionPerformed
+
+    private void btnFindCaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindCaseActionPerformed
+       FindACaseFrame frame=new FindACaseFrame(this);
+       frame.setLocationRelativeTo(this);
+       frame.setVisible(true);
+       this.setVisible(false);
+    }//GEN-LAST:event_btnFindCaseActionPerformed
+
+    private void btnViewCasesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewCasesActionPerformed
+       ViewACaseFrame frame=new ViewACaseFrame(this);
+       frame.setLocationRelativeTo(this);
+       frame.setVisible(true);
+       this.setVisible(false);
+    }//GEN-LAST:event_btnViewCasesActionPerformed
 
     /**
      * @param args the command line arguments

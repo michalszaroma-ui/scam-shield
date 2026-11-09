@@ -158,7 +158,7 @@ this.dispose();
     }//GEN-LAST:event_btnViewReportsActionPerformed
 
     private void btnSearchReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchReportsActionPerformed
-        new ViewReportsGUI().setVisible(true);
+        new SearchReportsFrame().setVisible(true); this.dispose();
 this.dispose();
     }//GEN-LAST:event_btnSearchReportsActionPerformed
 

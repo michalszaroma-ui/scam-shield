@@ -356,7 +356,6 @@ public class OpenCaseFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(0, 5, 5, 10);
         pnlLeft.add(lblPaymentMethod, gridBagConstraints);
 
-        btnOpenCase.setBackground(new java.awt.Color(0, 153, 153));
         btnOpenCase.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnOpenCase.setText("Open a case");
         btnOpenCase.setFocusPainted(false);

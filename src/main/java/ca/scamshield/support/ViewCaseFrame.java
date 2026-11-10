@@ -103,10 +103,10 @@ public class ViewCaseFrame extends javax.swing.JFrame {
         pnlContent.setBackground(new java.awt.Color(204, 204, 204));
         pnlContent.setForeground(new java.awt.Color(255, 255, 255));
         pnlContent.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
+        pnlContent.setOpaque(false);
         pnlContent.setPreferredSize(new java.awt.Dimension(760, 400));
         pnlContent.setLayout(new java.awt.GridBagLayout());
 
-        btnShowAllCases.setBackground(new java.awt.Color(0, 153, 153));
         btnShowAllCases.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnShowAllCases.setText("Show All Cases");
         btnShowAllCases.setFocusPainted(false);
@@ -116,7 +116,6 @@ public class ViewCaseFrame extends javax.swing.JFrame {
         btnShowAllCases.addActionListener(this::btnShowAllCasesActionPerformed);
         pnlContent.add(btnShowAllCases, new java.awt.GridBagConstraints());
 
-        btnBackToSupport.setBackground(new java.awt.Color(0, 153, 153));
         btnBackToSupport.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnBackToSupport.setText("Back to Support Menu");
         btnBackToSupport.setFocusPainted(false);
@@ -157,7 +156,6 @@ public class ViewCaseFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(5, 10, 10, 10);
         pnlContent.add(tblCases, gridBagConstraints);
 
-        btnFindCase.setBackground(new java.awt.Color(0, 153, 153));
         btnFindCase.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnFindCase.setText("Find a Case");
         btnFindCase.setFocusPainted(false);
@@ -204,7 +202,7 @@ public class ViewCaseFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 814, Short.MAX_VALUE)
+            .addComponent(pnlHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pnlFooter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()

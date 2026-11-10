@@ -18,7 +18,7 @@ public class SupportMenuFrame extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(SupportMenuFrame.class.getName());
     private javax.swing.JFrame parentWindow;
-    private ca.scamshield.support.caseList caseList=new caseList();
+    private CaseList caseList = new CaseList();
 
     public SupportMenuFrame() {
         initComponents();

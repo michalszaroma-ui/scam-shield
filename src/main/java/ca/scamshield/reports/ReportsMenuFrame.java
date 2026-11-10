@@ -148,18 +148,19 @@ public class ReportsMenuFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnSubmitReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitReportActionPerformed
-         new SubmitReportGUI().setVisible(true);
-   this.dispose();
+        new SubmitReportFrame().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnSubmitReportActionPerformed
 
     private void btnViewReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewReportsActionPerformed
-        new ViewReportsGUI().setVisible(true);
-this.dispose();
+        new ViewReportsFrame().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnViewReportsActionPerformed
 
     private void btnSearchReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchReportsActionPerformed
-        new ViewReportsGUI().setVisible(true);
-this.dispose();
+        new SearchReportsFrame().setVisible(true);
+        this.dispose();
+        this.dispose();
     }//GEN-LAST:event_btnSearchReportsActionPerformed
 
     /**

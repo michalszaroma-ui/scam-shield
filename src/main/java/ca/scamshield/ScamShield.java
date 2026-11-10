@@ -4,9 +4,9 @@ package ca.scamshield;
 /*
  *  ScamShield.java
  *
- *  Rev 1
+ *  Rev 2
  *
- *  22/10/2026
+ *  07/11/2026
  *
  *  @author Michal Szaroma, 
  */

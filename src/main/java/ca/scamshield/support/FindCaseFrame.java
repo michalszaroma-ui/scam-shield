@@ -18,7 +18,7 @@ public class FindCaseFrame extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FindCaseFrame.class.getName());
     private javax.swing.JFrame parentWindow;
-    private ca.scamshield.support.caseList caseList=new caseList();
+    private CaseList caseList = new CaseList();
 
     public FindCaseFrame() {
         initComponents();
@@ -27,7 +27,7 @@ public class FindCaseFrame extends javax.swing.JFrame {
     }
 
     FindCaseFrame(SupportMenuFrame aThis) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this();
     }
 
     /**
@@ -216,60 +216,61 @@ public class FindCaseFrame extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 814, Short.MAX_VALUE)
-            .addComponent(pnlFooter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pnlButtons, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(pnlHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 814, Short.MAX_VALUE)
+                        .addComponent(pnlFooter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(pnlButtons, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addContainerGap())
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(pnlHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(pnlButtons, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnlFooter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addComponent(pnlHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(pnlButtons, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(pnlFooter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         setBounds(0, 0, 814, 608);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        SupportMenuFrame menu=new SupportMenuFrame();
+        SupportMenuFrame menu = new SupportMenuFrame();
         menu.setLocationRelativeTo(this);
         menu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnMarkResolvedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMarkResolvedActionPerformed
-        if(txtCaseId.getText().trim().isEmpty()){
-            JOptionPane.showMessageDialog(this,"Enter a case ID first.");
-        
-        }else{
-        jTextArea1.append("\nStatus: Reolved");
-    }//GEN-LAST:event_btnMarkResolvedActionPerformed
+        if (txtCaseId.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Enter a case ID first.");
+
+        } else {
+            jTextArea1.append("\nStatus: Reolved");
+        }//GEN-LAST:event_btnMarkResolvedActionPerformed
     }
+
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        String caseId=txtCaseId.getText().trim();
-    if(caseId.isEmpty()){
-        JOptionPane.showMessageDialog(this,"Enter a case ID.");
-    }else{
-        jTextArea1.setText("Searching for Case ID: " + caseId);
-    }
+        String caseId = txtCaseId.getText().trim();
+        if (caseId.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Enter a case ID.");
+        } else {
+            jTextArea1.setText("Searching for Case ID: " + caseId);
+        }
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         txtCaseId.setText("");
         jTextArea1.setText("");
-        JOptionPane.showMessageDialog(this,"Case details cleared.");
+        JOptionPane.showMessageDialog(this, "Case details cleared.");
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void txtCaseIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCaseIdActionPerformed
-        String caseId=JOptionPane.showInputDialog(this,"Enter Case ID:");
-        if(caseId !=null){
+        String caseId = JOptionPane.showInputDialog(this, "Enter Case ID:");
+        if (caseId != null) {
             txtCaseId.setText(caseId);
         }
     }//GEN-LAST:event_txtCaseIdActionPerformed

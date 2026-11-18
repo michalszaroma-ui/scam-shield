@@ -9,16 +9,34 @@
  */
 package ca.scamshield.quiz;
 
-import ca.scamshield.MainMenuFrame;
+import ca.scamshield.ScamShieldStyle;
 
 public class TakeQuizFrame extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TakeQuizFrame.class.getName());
 
     public TakeQuizFrame() {
+        ScamShieldStyle.applyPage(this);
         initComponents();
-        getContentPane().setBackground(new java.awt.Color(245, 247, 250));
-        setLocationRelativeTo(null);
+
+        ScamShieldStyle.replaceHeader(pnlHeader, "Awareness Quiz",
+                "Take Quiz", "Answer questions and see how you score");
+        ScamShieldStyle.replaceFooter(pnlFooter, "Awareness Quiz", "Take Quiz");
+
+        ScamShieldStyle.styleBox(pnlStart, "Start");
+        ScamShieldStyle.styleBox(pnlQuestion, "Question 1 of 5");
+
+        ScamShieldStyle.stylePrimaryButton(btnSubmit);
+        for (javax.swing.JButton b : new javax.swing.JButton[]{btnStart, btnNext, btnBack}) {
+            ScamShieldStyle.styleButton(b);
+        }
+        txtName.setBorder(ScamShieldStyle.fieldBorder());
+        lblScore.setForeground(ScamShieldStyle.LOGO_BLUE);
+        for (javax.swing.JRadioButton r : new javax.swing.JRadioButton[]{rdoOptionA, rdoOptionB, rdoOptionC, rdoOptionD}) {
+            r.setOpaque(false);
+            r.setFont(ScamShieldStyle.LABEL_FONT);
+        }
+        ScamShieldStyle.finishFrame(this);
     }
 
     /**
@@ -158,7 +176,6 @@ public class TakeQuizFrame extends javax.swing.JFrame {
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 1.0;
         gridBagConstraints.insets = new java.awt.Insets(8, 10, 4, 10);
         pnlForm.add(pnlStart, gridBagConstraints);
 

@@ -9,17 +9,32 @@
  */
 package ca.scamshield.quiz;
 
-import ca.scamshield.MainMenuFrame;
+import ca.scamshield.ScamShieldStyle;
 
 public class ScoreHistoryFrame extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ScoreHistoryFrame.class.getName());
 
     public ScoreHistoryFrame() {
-        initComponents();
-        getContentPane().setBackground(new java.awt.Color(245, 247, 250));
-        setLocationRelativeTo(null);
+    ScamShieldStyle.applyPage(this);
+    initComponents();
+
+    ScamShieldStyle.replaceHeader(pnlHeader, "Awareness Quiz",
+            "Score History", "See past attempts and your best score");
+    ScamShieldStyle.replaceFooter(pnlFooter, "Awareness Quiz", "Score History");
+
+    ScamShieldStyle.styleBox(pnlSearch, "Search");
+    ScamShieldStyle.styleBox(pnlAttempts, "Past Attempts");
+
+    ScamShieldStyle.stylePrimaryButton(btnSearch);
+    for (javax.swing.JButton b : new javax.swing.JButton[]{btnShowAll, btnBack}) {
+        ScamShieldStyle.styleButton(b);
     }
+    txtName.setBorder(ScamShieldStyle.fieldBorder());
+    lblBestScore.setForeground(ScamShieldStyle.LOGO_BLUE);
+
+    ScamShieldStyle.finishFrame(this);
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -141,7 +156,6 @@ public class ScoreHistoryFrame extends javax.swing.JFrame {
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 1.0;
         gridBagConstraints.insets = new java.awt.Insets(8, 10, 4, 10);
         pnlForm.add(pnlSearch, gridBagConstraints);
 

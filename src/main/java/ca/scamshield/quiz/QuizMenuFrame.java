@@ -10,14 +10,26 @@
 package ca.scamshield.quiz;
 
 import ca.scamshield.MainMenuFrame;
+import ca.scamshield.ScamShieldStyle;
 
 public class QuizMenuFrame extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(QuizMenuFrame.class.getName());
 
     public QuizMenuFrame() {
+        ScamShieldStyle.applyPage(this);     // white dotted page - must come BEFORE initComponents()
         initComponents();
-        getContentPane().setBackground(new java.awt.Color(245, 247, 250));
+
+        ScamShieldStyle.replaceHeader(pnlHeader, "Awareness Quiz",
+                "Awareness Quiz", "Learn to spot scams before they catch you out");
+        ScamShieldStyle.replaceFooter(pnlFooter, "Awareness Quiz", "Quiz Menu");
+
+        for (javax.swing.JButton b : new javax.swing.JButton[]{btnTakeQuiz, btnManageQuestions, btnScoreHistory}) {
+            ScamShieldStyle.styleButton(b);
+            b.setFont(ScamShieldStyle.LABEL_FONT);
+        }
+        ScamShieldStyle.styleButton(btnBack);
+
         setLocationRelativeTo(null);
     }
 

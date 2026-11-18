@@ -18,8 +18,20 @@ public class MainMenuFrame extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MainMenuFrame.class.getName());
 
     public MainMenuFrame() {
+        ScamShieldStyle.applyPage(this);     // white dotted page - must come BEFORE initComponents()
         initComponents();
-        getContentPane().setBackground(new java.awt.Color(245, 247, 250));
+
+        ScamShieldStyle.replaceHeader(pnlHeader, "Scam Shield",
+                "Main Menu", "Recognise, report and recover from online scams");
+        ScamShieldStyle.replaceFooter(pnlFooter, "Main Menu",
+                "SDG 16 - Peace, Justice and Strong Institutions");
+
+        for (javax.swing.JButton b : new javax.swing.JButton[]{btnReports, btnQuiz, btnSupport}) {
+            ScamShieldStyle.styleButton(b);
+            b.setFont(ScamShieldStyle.LABEL_FONT);   // plain font, so only the first line is bold
+        }
+        ScamShieldStyle.styleButton(btnExit);
+
         setLocationRelativeTo(null);
     }
 

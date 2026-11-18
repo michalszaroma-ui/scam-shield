@@ -36,6 +36,7 @@ public class SupportMenuFrame extends javax.swing.JFrame {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
+        jPanel1 = new javax.swing.JPanel();
         pnlHeader = new javax.swing.JPanel();
         lblTitle = new javax.swing.JLabel();
         lblSubtitle = new javax.swing.JLabel();
@@ -50,6 +51,17 @@ public class SupportMenuFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Scam Shield - Victim Support");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         pnlHeader.setBackground(new java.awt.Color(30, 58, 95));
         pnlHeader.setPreferredSize(new java.awt.Dimension(800, 90));
@@ -74,8 +86,9 @@ public class SupportMenuFrame extends javax.swing.JFrame {
         pnlButtons.setOpaque(false);
         pnlButtons.setLayout(new java.awt.GridBagLayout());
 
+        btnViewCases.setBackground(new java.awt.Color(204, 204, 204));
         btnViewCases.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnViewCases.setText("<html><center><b>View Cases</b><br>See all cases and recovery advice</center></html>");
+        btnViewCases.setText("<html><center><b>View Cases</b><br>Review your cases and recovery See all cases and recovery advice advice</center></html>");
         btnViewCases.setFocusPainted(false);
         btnViewCases.setPreferredSize(new java.awt.Dimension(360, 70));
         btnViewCases.addActionListener(this::btnViewCasesActionPerformed);
@@ -86,6 +99,7 @@ public class SupportMenuFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 10, 0);
         pnlButtons.add(btnViewCases, gridBagConstraints);
 
+        btnOpenCase.setBackground(new java.awt.Color(204, 204, 204));
         btnOpenCase.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnOpenCase.setText("<html><center><b>Open a Case</b><br>Tell us what happened and find your next steps.</center></html>");
         btnOpenCase.setFocusPainted(false);
@@ -114,6 +128,7 @@ public class SupportMenuFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 15, 0);
         pnlButtons.add(btnBack, gridBagConstraints);
 
+        btnFindCase.setBackground(new java.awt.Color(204, 204, 204));
         btnFindCase.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnFindCase.setText("<html><center><b>Find a Case</b><br>Search by case ID to update or close a case.</center></html>");
         btnFindCase.setFocusPainted(false);
@@ -148,21 +163,31 @@ public class SupportMenuFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 814, Short.MAX_VALUE)
             .addComponent(pnlFooter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(pnlButtons, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pnlButtons, javax.swing.GroupLayout.DEFAULT_SIZE, 777, Short.MAX_VALUE)
                 .addGap(31, 31, 31))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(pnlHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(pnlButtons, javax.swing.GroupLayout.DEFAULT_SIZE, 446, Short.MAX_VALUE)
+                .addComponent(pnlButtons, javax.swing.GroupLayout.DEFAULT_SIZE, 417, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pnlFooter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         setBounds(0, 0, 814, 608);
@@ -226,6 +251,7 @@ public class SupportMenuFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnFindCase;
     private javax.swing.JButton btnOpenCase;
     private javax.swing.JButton btnViewCases;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblFooter;
     private javax.swing.JLabel lblHowToHelp;
     private javax.swing.JLabel lblSubtitle;

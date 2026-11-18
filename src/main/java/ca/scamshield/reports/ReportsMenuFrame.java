@@ -148,7 +148,7 @@ public class ReportsMenuFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnSubmitReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitReportActionPerformed
-        new SubmitReportFrame().setVisible(true);
+        new SubmitReportGUI().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnSubmitReportActionPerformed
 

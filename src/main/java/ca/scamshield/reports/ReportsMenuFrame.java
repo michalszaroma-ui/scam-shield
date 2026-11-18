@@ -9,18 +9,29 @@
  */
 package ca.scamshield.reports;
 
-import ca.scamshield.quiz.*;
 import ca.scamshield.MainMenuFrame;
+import ca.scamshield.ScamShieldStyle;
 
 public class ReportsMenuFrame extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ReportsMenuFrame.class.getName());
 
     public ReportsMenuFrame() {
-        initComponents();
-        getContentPane().setBackground(new java.awt.Color(245, 247, 250));
-        setLocationRelativeTo(null);
+    ScamShieldStyle.applyPage(this);     // white dotted page - must come BEFORE initComponents()
+    initComponents();
+
+    ScamShieldStyle.replaceHeader(pnlHeader, "Scam Reports",
+            "Scam Reports", "Report scams and warn others");
+    ScamShieldStyle.replaceFooter(pnlFooter, "Scam Reports", "Reports Menu");
+
+    for (javax.swing.JButton b : new javax.swing.JButton[]{btnSubmitReport, btnViewReports, btnSearchReports}) {
+        ScamShieldStyle.styleButton(b);
+        b.setFont(ScamShieldStyle.LABEL_FONT);
     }
+    ScamShieldStyle.styleButton(btnBack);
+
+    ScamShieldStyle.finishFrame(this);
+}
 
     /**
      * This method is called from within the constructor to initialize the form.

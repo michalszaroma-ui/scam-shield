@@ -32,7 +32,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
         }
         ScamShieldStyle.styleButton(btnExit);
 
-        setLocationRelativeTo(null);
+        ScamShieldStyle.finishFrame(this);
     }
 
     /**

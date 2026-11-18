@@ -78,8 +78,18 @@ public final class ScamShieldStyle {
             }
         };
         page.setBackground(BACKGROUND);
-        page.setBorder(BorderFactory.createEmptyBorder(14, 34, 10, 34));
+        page.setBorder(BorderFactory.createEmptyBorder(14, 24, 10, 24));
         frame.setContentPane(page);
+    }
+    
+        // Every Scam Shield window is the same size
+    public static final int FRAME_WIDTH = 860;
+    public static final int FRAME_HEIGHT = 720;
+
+    /** Call at the END of the constructor: same size for every screen, centred. */
+    public static void finishFrame(JFrame frame) {
+        frame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
+        frame.setLocationRelativeTo(null);
     }
 
     /** Swaps the contents of a screen's old header panel for the logo, title and info bar. */

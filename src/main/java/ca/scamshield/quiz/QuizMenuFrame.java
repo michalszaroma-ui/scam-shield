@@ -30,7 +30,7 @@ public class QuizMenuFrame extends javax.swing.JFrame {
         }
         ScamShieldStyle.styleButton(btnBack);
 
-        setLocationRelativeTo(null);
+        ScamShieldStyle.finishFrame(this);
     }
 
     /**

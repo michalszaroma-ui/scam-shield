@@ -9,10 +9,8 @@
  */
 package ca.scamshield.support;
 
-import ca.scamshield.reports.*;
-import ca.scamshield.quiz.*;
-import ca.scamshield.support.*;
 import ca.scamshield.MainMenuFrame;
+import ca.scamshield.ScamShieldStyle;
 
 public class SupportMenuFrame extends javax.swing.JFrame {
 
@@ -21,9 +19,24 @@ public class SupportMenuFrame extends javax.swing.JFrame {
     private CaseList caseList = new CaseList();
 
     public SupportMenuFrame() {
+        ScamShieldStyle.applyPage(this);     // white dotted page - must come BEFORE initComponents()
         initComponents();
-        getContentPane().setBackground(new java.awt.Color(245, 247, 250));
-        setLocationRelativeTo(null);
+
+        ScamShieldStyle.replaceHeader(pnlHeader, "Victim Support",
+                "Support & Recovery", "Record a scam incident and get recovery guidance");
+        ScamShieldStyle.replaceFooter(pnlFooter, "Victim Support", "Support Menu");
+
+        jPanel1.setVisible(false);           // empty leftover panel - hide it so it doesn't cover the buttons
+        lblHowToHelp.setForeground(ScamShieldStyle.LOGO_BLUE);
+
+        btnViewCases.setText("<html><center><b>View Cases</b><br>See all cases and recovery advice</center></html>");
+        for (javax.swing.JButton b : new javax.swing.JButton[]{btnOpenCase, btnViewCases, btnFindCase}) {
+            ScamShieldStyle.styleButton(b);
+            b.setFont(ScamShieldStyle.LABEL_FONT);
+        }
+        ScamShieldStyle.styleButton(btnBack);
+
+        ScamShieldStyle.finishFrame(this);
     }
 
     /**
@@ -194,31 +207,31 @@ public class SupportMenuFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-       MainMenuFrame menu=new MainMenuFrame();
-       menu.setLocationRelativeTo(this);
-       menu.setVisible(true);
-       this.dispose();
+        MainMenuFrame menu = new MainMenuFrame();
+        menu.setLocationRelativeTo(this);
+        menu.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnOpenCaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOpenCaseActionPerformed
-        OpenCaseFrame frame=new OpenCaseFrame();
+        OpenCaseFrame frame = new OpenCaseFrame();
         frame.setLocationRelativeTo(this);
         frame.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnOpenCaseActionPerformed
 
     private void btnFindCaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindCaseActionPerformed
-       FindCaseFrame frame=new FindCaseFrame(this);
-       frame.setLocationRelativeTo(this);
-       frame.setVisible(true);
-       this.setVisible(false);
+        FindCaseFrame frame = new FindCaseFrame(this);
+        frame.setLocationRelativeTo(this);
+        frame.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnFindCaseActionPerformed
 
     private void btnViewCasesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewCasesActionPerformed
-       ViewCaseFrame frame=new ViewCaseFrame(this);
-       frame.setLocationRelativeTo(this);
-       frame.setVisible(true);
-       this.setVisible(false);
+        ViewCaseFrame frame = new ViewCaseFrame(this);
+        frame.setLocationRelativeTo(this);
+        frame.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnViewCasesActionPerformed
 
     /**

@@ -9,21 +9,48 @@
  */
 package ca.scamshield.support;
 
-import ca.scamshield.reports.*;
-import ca.scamshield.quiz.*;
-import ca.scamshield.support.*;
+import ca.scamshield.ScamShieldStyle;
 import javax.swing.JOptionPane;
 
 public class OpenCaseFrame extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(OpenCaseFrame.class.getName());
     private javax.swing.JFrame parentWindow;
-    private CaseList caseList=new CaseList();
+    private CaseList caseList = new CaseList();
 
     public OpenCaseFrame() {
+        ScamShieldStyle.applyPage(this);              // white dotted page - must come BEFORE initComponents()
         initComponents();
-        getContentPane().setBackground(new java.awt.Color(245, 247, 250));
-        setLocationRelativeTo(null);
+
+        ScamShieldStyle.replaceHeader(pnlHeader, "Victim Support",
+                "Open a Case", "Select the case type and complete the relevant fields");
+        ScamShieldStyle.replaceFooter(pnlFooter, "Victim Support", "Open a Case");
+
+        // the two columns become see-through so the dotted page shows
+        pnlLeft.setOpaque(false);
+        pnlRight.setOpaque(false);
+        pnlForm.setOpaque(false);
+
+        // labels in the shared font and colour
+        for (javax.swing.JLabel l : new javax.swing.JLabel[]{
+            lblCaseId, lblCaseType, lblDescription, lblAmountLost, lblPlatform, lblPaymentMethod,
+            lblDocumentType, lblAccessRestored, lblSenderAddress, lblSuspiciousLink, lblCompany, lblContactMethod}) {
+            l.setFont(ScamShieldStyle.LABEL_FONT);
+            l.setForeground(ScamShieldStyle.TEXT);
+        }
+
+        // thin blue-grey border on every text field
+        for (javax.swing.JTextField f : new javax.swing.JTextField[]{
+            txtCaseId, txtDescription, txtAmountLost, txtPlatform,
+            txtDocumentType, txtSenderAddress, txtSuspiciousLink, txtCompany}) {
+            f.setBorder(ScamShieldStyle.fieldBorder());
+        }
+
+        ScamShieldStyle.stylePrimaryButton(btnOpenCase);   // main action is blue
+        ScamShieldStyle.styleButton(btnClear);
+        ScamShieldStyle.styleButton(btnBack);
+
+        ScamShieldStyle.finishFrame(this);
     }
 
     /**
@@ -432,73 +459,73 @@ public class OpenCaseFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
-      txtCaseId.setText("");
-      txtDescription.setText("");
-      txtAmountLost.setText("");
-      txtPlatform.setText("");
-      txtDocumentType.setText("");
-      txtSenderAddress.setText("");
-      txtSuspiciousLink.setText("");
-      txtCompany.setText("");
-      
-      jCaseType.setSelectedIndex(0);
-      jPaymentMethod.setSelectedIndex(0);
-      jAccessRestored.setSelectedIndex(0);
-      jContactMethod.setSelectedIndex(0);
-      
-      txtCaseId.requestFocus();
+        txtCaseId.setText("");
+        txtDescription.setText("");
+        txtAmountLost.setText("");
+        txtPlatform.setText("");
+        txtDocumentType.setText("");
+        txtSenderAddress.setText("");
+        txtSuspiciousLink.setText("");
+        txtCompany.setText("");
+
+        jCaseType.setSelectedIndex(0);
+        jPaymentMethod.setSelectedIndex(0);
+        jAccessRestored.setSelectedIndex(0);
+        jContactMethod.setSelectedIndex(0);
+
+        txtCaseId.requestFocus();
     }//GEN-LAST:event_btnClearActionPerformed
 
     private void txtCaseIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCaseIdActionPerformed
-      JOptionPane.showMessageDialog(this, "Case ID: " + txtCaseId.getText());
+        JOptionPane.showMessageDialog(this, "Case ID: " + txtCaseId.getText());
     }//GEN-LAST:event_txtCaseIdActionPerformed
 
     private void txtDescriptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDescriptionActionPerformed
-          JOptionPane.showMessageDialog(this, "Description: " + txtDescription.getText());  
+        JOptionPane.showMessageDialog(this, "Description: " + txtDescription.getText());
     }//GEN-LAST:event_txtDescriptionActionPerformed
 
     private void txtAmountLostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAmountLostActionPerformed
-          JOptionPane.showMessageDialog(this, "Case ID: " + txtAmountLost.getText());
+        JOptionPane.showMessageDialog(this, "Case ID: " + txtAmountLost.getText());
     }//GEN-LAST:event_txtAmountLostActionPerformed
 
     private void txtPlatformActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPlatformActionPerformed
-          JOptionPane.showMessageDialog(this, "Platform: " + txtPlatform.getText());
+        JOptionPane.showMessageDialog(this, "Platform: " + txtPlatform.getText());
     }//GEN-LAST:event_txtPlatformActionPerformed
 
     private void jCaseTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCaseTypeActionPerformed
-     if(jCaseType.getSelectedIndex() > 0){
-         JOptionPane.showMessageDialog(this,"Selected: " + jCaseType.getSelectedItem());
-     }
-        
+        if (jCaseType.getSelectedIndex() > 0) {
+            JOptionPane.showMessageDialog(this, "Selected: " + jCaseType.getSelectedItem());
+        }
+
     }//GEN-LAST:event_jCaseTypeActionPerformed
 
     private void jPaymentMethodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPaymentMethodActionPerformed
-        if(jPaymentMethod.getSelectedIndex() > 0){
-            JOptionPane.showMessageDialog(this,"Payment method: " + jPaymentMethod.getSelectedItem());
+        if (jPaymentMethod.getSelectedIndex() > 0) {
+            JOptionPane.showMessageDialog(this, "Payment method: " + jPaymentMethod.getSelectedItem());
         }
     }//GEN-LAST:event_jPaymentMethodActionPerformed
 
     private void jAccessRestoredActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAccessRestoredActionPerformed
-        if(jAccessRestored.getSelectedIndex() > 0){
-            JOptionPane.showMessageDialog(this,"Access Restored: " + jAccessRestored.getSelectedItem());
+        if (jAccessRestored.getSelectedIndex() > 0) {
+            JOptionPane.showMessageDialog(this, "Access Restored: " + jAccessRestored.getSelectedItem());
         }
     }//GEN-LAST:event_jAccessRestoredActionPerformed
 
     private void txtSenderAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenderAddressActionPerformed
-       JOptionPane.showMessageDialog(this, "Sender Address: " + txtSenderAddress.getText());
+        JOptionPane.showMessageDialog(this, "Sender Address: " + txtSenderAddress.getText());
     }//GEN-LAST:event_txtSenderAddressActionPerformed
 
     private void txtSuspiciousLinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSuspiciousLinkActionPerformed
-         JOptionPane.showMessageDialog(this, "Suspicious Link: " + txtSuspiciousLink.getText());
+        JOptionPane.showMessageDialog(this, "Suspicious Link: " + txtSuspiciousLink.getText());
     }//GEN-LAST:event_txtSuspiciousLinkActionPerformed
 
     private void txtCompanyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCompanyActionPerformed
-         JOptionPane.showMessageDialog(this, "Company: " + txtCompany.getText());
+        JOptionPane.showMessageDialog(this, "Company: " + txtCompany.getText());
     }//GEN-LAST:event_txtCompanyActionPerformed
 
     private void jContactMethodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jContactMethodActionPerformed
-        if(jContactMethod.getSelectedIndex() > 0){
-            JOptionPane.showMessageDialog(this,"Contact method: " + jContactMethod.getSelectedItem());
+        if (jContactMethod.getSelectedIndex() > 0) {
+            JOptionPane.showMessageDialog(this, "Contact method: " + jContactMethod.getSelectedItem());
         }
     }//GEN-LAST:event_jContactMethodActionPerformed
 
@@ -507,53 +534,52 @@ public class OpenCaseFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_txtDocumentTypeActionPerformed
 
     private void btnOpenCaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOpenCaseActionPerformed
-          javax.swing.JOptionPane.showMessageDialog(this,"Case form submitted.");
-          String caseId = txtCaseId.getText().trim();
-          String caseType=jCaseType.getSelectedItem().toString();
-          String description=txtDescription.getText().trim();
-          
-           if(!caseId.matches("(FL|IT|AH|PH|OS|IN|RS|JS|IM)\\d{4}")){
-               JOptionPane.showMessageDialog(this,"Invalid Case ID.");
-               return;
-          }
-           if(jCaseType.getSelectedIndex() == 0){
-               JOptionPane.showMessageDialog(this,"Please select a case type");
-               return;
-           }
-           String amount=txtAmountLost.getText();
-           String platform=txtPlatform.getText();
-           String paymentMethod=jPaymentMethod.getSelectedItem().toString();
-           String documentType=txtDocumentType.getText();
-           String accessRestored=jAccessRestored.getSelectedItem().toString();
-           String sender=txtSenderAddress.getText();
-           String link=txtSuspiciousLink.getText();
-           String company=txtCompany.getText();
-           String contactMethod=jContactMethod.getSelectedItem().toString();
-           
-           JOptionPane.showMessageDialog(this,"Case details entered successfully\n\n" +
-                   "Case ID: " + caseId + "\n " +
-                   "Case Type: " + caseType + "\n" +
-                   "Description: " + description + "\n "+
-                   "Amount Lost: " + amount + "\n" +
-                   "Platform: " + platform + "\n" +
-                   "Payment Method: " + paymentMethod + "\n" +
-                   "Document Type: " + documentType + "\n" +
-                   "Access Restored: " + accessRestored + "\n" +
-                   "Sender Address: " + sender + "\n" +
-                   "Suspicious Link: " + link + "\n" +
-                   "Company: " + company + "\n" +
-                   "Contact Method: " + contactMethod);
-                   
-           
-           
+        javax.swing.JOptionPane.showMessageDialog(this, "Case form submitted.");
+        String caseId = txtCaseId.getText().trim();
+        String caseType = jCaseType.getSelectedItem().toString();
+        String description = txtDescription.getText().trim();
+
+        if (!caseId.matches("(FL|IT|AH|PH|OS|IN|RS|JS|IM)\\d{4}")) {
+            JOptionPane.showMessageDialog(this, "Invalid Case ID.");
+            return;
+        }
+        if (jCaseType.getSelectedIndex() == 0) {
+            JOptionPane.showMessageDialog(this, "Please select a case type");
+            return;
+        }
+        String amount = txtAmountLost.getText();
+        String platform = txtPlatform.getText();
+        String paymentMethod = jPaymentMethod.getSelectedItem().toString();
+        String documentType = txtDocumentType.getText();
+        String accessRestored = jAccessRestored.getSelectedItem().toString();
+        String sender = txtSenderAddress.getText();
+        String link = txtSuspiciousLink.getText();
+        String company = txtCompany.getText();
+        String contactMethod = jContactMethod.getSelectedItem().toString();
+
+        JOptionPane.showMessageDialog(this, "Case details entered successfully\n\n"
+                + "Case ID: " + caseId + "\n "
+                + "Case Type: " + caseType + "\n"
+                + "Description: " + description + "\n "
+                + "Amount Lost: " + amount + "\n"
+                + "Platform: " + platform + "\n"
+                + "Payment Method: " + paymentMethod + "\n"
+                + "Document Type: " + documentType + "\n"
+                + "Access Restored: " + accessRestored + "\n"
+                + "Sender Address: " + sender + "\n"
+                + "Suspicious Link: " + link + "\n"
+                + "Company: " + company + "\n"
+                + "Contact Method: " + contactMethod);
+
+
     }//GEN-LAST:event_btnOpenCaseActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        SupportMenuFrame menu=new SupportMenuFrame();
+        SupportMenuFrame menu = new SupportMenuFrame();
         menu.setLocationRelativeTo(this);
         menu.setVisible(true);
         this.dispose();
-        
+
     }//GEN-LAST:event_btnBackActionPerformed
 
     /**

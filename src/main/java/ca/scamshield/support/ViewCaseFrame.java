@@ -9,47 +9,46 @@
  */
 package ca.scamshield.support;
 
-import ca.scamshield.reports.*;
-import ca.scamshield.quiz.*;
-import ca.scamshield.support.*;
+import ca.scamshield.ScamShieldStyle;
 import javax.swing.JOptionPane;
 
 public class ViewCaseFrame extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ViewCaseFrame.class.getName());
     private javax.swing.JFrame parentWindow;
-    private CaseList caseList=new CaseList();
+    private CaseList caseList = new CaseList();
     private Object JTable1;
 
     public ViewCaseFrame() {
+        ScamShieldStyle.applyPage(this);              // white dotted page - must come BEFORE initComponents()
         initComponents();
-        getContentPane().setBackground(new java.awt.Color(245, 247, 250));
-        setLocationRelativeTo(null);
-       
-        //get the JTable inside jScrollPane
-        javax.swing.JTable table= jTable1;
-        
-        //style table headings
-        table.getTableHeader().setBackground(new java.awt.Color(32,59,96));
-        
-        //make heading text white
-        table.getTableHeader().setForeground(java.awt.Color.WHITE);
-        table.getTableHeader().setFont(new java.awt.Font("Sanserif", java.awt.Font.BOLD, 14));
-        //Increase heading height
-        table.getTableHeader().setPreferredSize(new java.awt.Dimension(0,35));
-       
-        table.setRowHeight(30);
-        table.setFillsViewportHeight(true);
-                  
+
+        ScamShieldStyle.replaceHeader(pnlHeader, "Victim Support",
+                "View Cases", "Review your cases and track your recovery progress");
+        ScamShieldStyle.replaceFooter(pnlFooter, "Victim Support", "View Cases");
+
+        pnlContent.setOpaque(false);                  // no grey background behind the table
+
+        // shared table style: navy header with white text, light-green stripes
+        ScamShieldStyle.styleTable(jTable1);
+        // Catherine's own sizes: taller header and rows
+        jTable1.getTableHeader().setPreferredSize(new java.awt.Dimension(0, 35));
+        jTable1.setRowHeight(30);
+        jTable1.setFillsViewportHeight(true);
+
+        ScamShieldStyle.stylePrimaryButton(btnFindCase);
+        for (javax.swing.JButton b : new javax.swing.JButton[]{btnShowAllCases, btnBackToSupport}) {
+            ScamShieldStyle.styleButton(b);
+        }
+        jSearchById.setBorder(ScamShieldStyle.fieldBorder());
+
+        ScamShieldStyle.finishFrame(this);
     }
 
     ViewCaseFrame(SupportMenuFrame aThis) {
         this();
     }
-              
-                         
-    
-   
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -225,41 +224,42 @@ public class ViewCaseFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackToSupportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackToSupportActionPerformed
-        SupportMenuFrame menu=new SupportMenuFrame();
+        SupportMenuFrame menu = new SupportMenuFrame();
         menu.setLocationRelativeTo(this);
         menu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackToSupportActionPerformed
 
     private void btnShowAllCasesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowAllCasesActionPerformed
-        String message="";
-        for(SupportCase caseList :caseList.getAllCases()){
-            message +=caseList.getCaseId() + ": "+caseList.getDescription() + "\n";
+        String message = "";
+        for (SupportCase caseList : caseList.getAllCases()) {
+            message += caseList.getCaseId() + ": " + caseList.getDescription() + "\n";
         }
-        if(message.isEmpty()){
-            message="No cases to display.";
+        if (message.isEmpty()) {
+            message = "No cases to display.";
         }
-        JOptionPane.showMessageDialog(this,message);
+        JOptionPane.showMessageDialog(this, message);
     }//GEN-LAST:event_btnShowAllCasesActionPerformed
 
     private void btnFindCaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindCaseActionPerformed
-        FindCaseFrame find=new FindCaseFrame();
+        FindCaseFrame find = new FindCaseFrame();
         find.setLocationRelativeTo(this);
         find.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnFindCaseActionPerformed
 
     private void jSearchByIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSearchByIdActionPerformed
-        String caseId=jSearchById.getText().trim();
-        for(int row = 0; row < jTable1.getRowCount(); row++){
-            if(caseId.equalsIgnoreCase(String.valueOf(jTable1.getValueAt(row, 0)))){
-                jTable1.setRowSelectionInterval(row,row);
-            return;
-        }
-        
+        String caseId = jSearchById.getText().trim();
+        for (int row = 0; row < jTable1.getRowCount(); row++) {
+            if (caseId.equalsIgnoreCase(String.valueOf(jTable1.getValueAt(row, 0)))) {
+                jTable1.setRowSelectionInterval(row, row);
+                return;
+            }
+
     }//GEN-LAST:event_jSearchByIdActionPerformed
-        JOptionPane.showMessageDialog(this,"Case ID not found");
+        JOptionPane.showMessageDialog(this, "Case ID not found");
     }
+
     /**
      * @param args the command line arguments
      */

@@ -83,7 +83,7 @@ public final class ScamShieldStyle {
     }
     
         // Every Scam Shield window is the same size
-    public static final int FRAME_WIDTH = 860;
+    public static final int FRAME_WIDTH = 900;
     public static final int FRAME_HEIGHT = 720;
 
     /** Call at the END of the constructor: same size for every screen, centred. */

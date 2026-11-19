@@ -28,11 +28,11 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="pnlHeader" alignment="0" pref="814" max="32767" attributes="0"/>
+          <Component id="pnlHeader" alignment="0" max="32767" attributes="0"/>
           <Component id="pnlFooter" alignment="0" max="32767" attributes="0"/>
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="pnlButtons" pref="777" max="32767" attributes="0"/>
+              <Component id="pnlButtons" max="32767" attributes="0"/>
               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">

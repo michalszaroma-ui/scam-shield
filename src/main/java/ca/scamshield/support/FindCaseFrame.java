@@ -9,9 +9,7 @@
  */
 package ca.scamshield.support;
 
-import ca.scamshield.reports.*;
-import ca.scamshield.quiz.*;
-import ca.scamshield.support.*;
+import ca.scamshield.ScamShieldStyle;
 import javax.swing.JOptionPane;
 
 public class FindCaseFrame extends javax.swing.JFrame {
@@ -21,9 +19,24 @@ public class FindCaseFrame extends javax.swing.JFrame {
     private CaseList caseList = new CaseList();
 
     public FindCaseFrame() {
+        ScamShieldStyle.applyPage(this);
         initComponents();
-        getContentPane().setBackground(new java.awt.Color(245, 247, 250));
-        setLocationRelativeTo(null);
+
+        ScamShieldStyle.replaceHeader(pnlHeader, "Victim Support",
+                "Find a Case", "Search, view guidance and manage a case");
+        ScamShieldStyle.replaceFooter(pnlFooter, "Victim Support", "Find a Case");
+
+        ScamShieldStyle.stylePrimaryButton(btnSearch);
+        for (javax.swing.JButton b : new javax.swing.JButton[]{btnMarkResolved, btnDelete, btnBack}) {
+            ScamShieldStyle.styleButton(b);
+        }
+        txtCaseId.setBorder(ScamShieldStyle.fieldBorder());
+        lblCaseId.setFont(ScamShieldStyle.LABEL_FONT);
+        jText.setFont(ScamShieldStyle.HEADING_FONT);          // "Case Details & Recovery Guidance"
+        jText.setForeground(ScamShieldStyle.LOGO_GREEN);
+        jTextArea1.setFont(ScamShieldStyle.LABEL_FONT);
+
+        ScamShieldStyle.finishFrame(this);
     }
 
     FindCaseFrame(SupportMenuFrame aThis) {
